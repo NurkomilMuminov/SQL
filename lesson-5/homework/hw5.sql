@@ -494,3 +494,8 @@ where Age < 30 and DepartmentName in('HR', 'IT')
 /* Use LIKE with wildcard to select all customers whose Email contains the domain '@gmail.com'. */
 select * from Customers
 where Email like '%@gmail.com'
+
+/* Write a query that uses the ALL operator to find employees 
+whose salary is greater than all employees in the 'Sales' department. */
+select * from Employees
+where Salary > all (select Salary from Sales)
